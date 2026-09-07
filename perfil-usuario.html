@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Meu perfil MPO</title>
+        <link rel="stylesheet" href="style.css?v=4">
+    </head>
+
+    <body>
+        <div class= "fundo"></div>
+        <main class="conteudo">
+            <h1 id="nomePerfil"></h1>
+                <p>Perfil Otaku</p>
+                <section class="painel">
+                    <h2>Sobre Mim</h2>
+                    <p id="bioPerfil"></p>
+                </section>
+
+                <section class="painel">
+                    <h2>Meus Animes Favoritos</h2>
+                    <div id="listaMeusAnimes"></div>
+                </section>
+            <button id="botaoEditar" class="principal">
+                Editar Perfil
+            </button>
+            <div id="areaEdicao" style="display: none">
+                <h2>Editar Perfil</h2>
+
+                <label for="novoNome">Nome</label>
+                <input id="novoNome" type="text">
+                <label for="novaBio">Bio</label>
+                <textarea id="novaBio" placeholder="Fale um pouco sobre você..."></textarea>
+                <button id="botaoSalvar" class= "principal">Salvar alterações</button>
+            </div>
+
+
+        </main>
+
+        <script src="perfil-usuario.js"></script>
+        <script src="menu.js"></script>
+    </body>

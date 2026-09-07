@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MPO</title>
+        <link rel="stylesheet" href="style.css?v=2">
+    </head>
+
+    <body>
+        <div class="fundo"></div>
+        <main class="conteudo">
+            <h1 id = "titulo"></h1>
+            <p>Bem Vindo ao Meu Perfil Otaku</p>
+            <p>Aqui você poderá organizar e exibir 
+            todos os animes e mangás que já assistiu ou leu
+            </p>
+            <button class="principal" onclick="window.location.href='perfil-usuario.html'"> Meu Perfil</button>
+            <section>
+                <section class="painel">
+                    <h2>Minha coleção</h2>
+                    <p>Organizar Animes e Mangás</p>
+                    <button class="secundario" onclick="window.location.href='animes.html'">
+                        Animes
+                    </button>
+                    <button id="botaoMangas" class="secundario">
+                        Mangás
+                    </button>
+                </section>
+        </main>
+
+        <script>
+            const botaoMangas = document.querySelector("#botaoMangas");
+            botaoMangas.addEventListener("click", function(){
+                window.location.href = "mangas.html";
+            })
+        </script>
+        <script src = "home.js"></script>
+        <script src = "menu.js"></script>
+    </body>
+</html>

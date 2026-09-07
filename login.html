@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login - MPO</title>
+        <link rel="stylesheet" href="style.css?v=7">
+    </head>
+
+    <body>
+
+        <div class="fundo"></div>
+
+        <main class="conteudo login">
+
+            <h1 id="titulo">MPO</h1>
+
+            <p>Entre no seu perfil</p>
+
+            <div class="login-botoes">
+
+                <button class="botao-social google">
+                    Continuar com Google
+                </button>
+
+                <button class="botao-social facebook">
+                    Continuar com Facebook
+                </button>
+
+            </div>
+
+            <p class="separador">ou</p>
+
+            <form id="formLogin">
+
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seu@email.com">
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" placeholder="Sua senha">
+
+                <button type="submit" class="principal">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p>
+                Ainda não tem uma conta?
+                <button id="botaoCadastro" class="secundario">
+                    Criar conta
+                </button>
+            </p>
+
+        </main>
+            <script>
+                const formLogin = document.querySelector("#formLogin");
+
+                formLogin.addEventListener("submit", function(event){
+                    event.preventDefault();
+
+                    const email = document.querySelector("#email").Value;
+                    const senha = document.querySelector("#senha").value;
+                    if (email === "" || senha === "") {
+                        alert("Preencha o e-mail e a senha");
+                        return;
+                    }
+
+                    window.location.href = "perfil.html";
+
+                })
+            </script>
+            <script>
+                const botaoCadastro = document.querySelector("#botaoCadastro");
+                botaoCadastro.addEventListener("click", function() {
+                    window.location.href = "cadastro.html";
+                })
+            </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro - MPO</title>
+        <link rel="stylesheet" href="style.css?v=6">
+    </head>
+
+    <body>
+
+        <div class="fundo"></div>
+
+        <main class="conteudo login">
+
+            <h1 id="titulo">MPO</h1>
+
+            <p>Crie sua conta</p>
+
+            <form id="formCadastro">
+
+                <label for="nome">Nome de usuário</label>
+                <input id="nome" type="text" placeholder="Seu nome">
+
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="seu@email.com">
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" placeholder="Sua senha">
+
+                <button type="submit" class="principal">
+                    Criar conta
+                </button>
+
+            </form>
+
+            <p>
+                Já tem uma conta?
+                <button id="botaoLogin" class="secundario">
+                    Voltar para o login
+                </button>
+            </p>
+
+        </main>
+        <script>
+            const botaoLogin = document.querySelector("#botaoLogin");
+            botaoLogin.addEventListener("click", function() {
+                window.location.href = "login.html"
+            });
+        </script>
+        <script>
+                const formCadastro = document.querySelector("#formCadastro")
+                formCadastro.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const nome = document.querySelector("#nome").value;
+                const email = document.querySelector("#email").value;
+                const senha = document.querySelector("#senha").value;
+
+                if (nome === "" || email === "" || senha === "") {
+                    alert ("Preencha todos os campos");
+                    return
+                }
+
+                localStorage.setItem("nomeCadastro", nome);
+                localStorage.setItem("emailCadastro", email);
+                localStorage.setItem("senhaCadastro", senha);
+
+               window.location.href = "perfil.html"
+            })
+        </script>
+    </body>
+</html>
