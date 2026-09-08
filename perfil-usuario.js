@@ -28,6 +28,9 @@ const minhaColeçao = usuarioAtual.colecao;
 const listaMeusAnimes = document.querySelector("#listaMeusAnimes");
 const listaMeusMangas = document.querySelector("#listaMeusMangas");
 
+const fotoPerfilUsuario = document.querySelector("#fotoPerfilUsuario");
+
+
 
 function criarCard(item, indiceReal) {
 
@@ -181,7 +184,7 @@ function mostrarColecoes() {
         const card = criarCard(item, indiceReal);
 
 
-        // ITENS ANTIGOS SEM "TIPO" SÃO TRATADOS COMO ANIME
+
 
         if (item.tipo === "manga") {
 
@@ -206,6 +209,9 @@ mostrarColecoes();
 
 nomePerfil.textContent = usuarioAtual.nome;
 bioPerfil.textContent = usuarioAtual.bio;
+if (usuarioAtual.foto) {
+    fotoPerfilUsuario.src = usuarioAtual.foto;
+}
 
 botaoEditar.addEventListener("click", function(){
     areaEdicao.style.display = "flex";
@@ -226,3 +232,8 @@ botaoSalvar.addEventListener("click", function(){
 
     areaEdicao.style.display = "none"
 })
+history.pushState(null, "", "perfil-usuario.html");
+
+window.addEventListener("popstate", function() {
+    window.location.href = "home.html";
+});

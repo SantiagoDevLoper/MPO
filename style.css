@@ -464,3 +464,44 @@ textarea {
 
     font-size: 13px;
 }
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid red;
+    display: block;
+    margin: 0 auto 20px;
+}
+.seletor-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#fotoPerfil {
+    display: none;
+}
+
+.botao-foto {
+    display: inline-block;
+    background-color: #222222;
+    color: white;
+    border: 1px solid #444444;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-foto:hover {
+    background-color: red;
+    border-color: red;
+}
+
+#nomeArquivo {
+    color: #999999;
+    font-size: 14px;
+}

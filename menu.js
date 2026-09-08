@@ -17,6 +17,10 @@ menu.innerHTML = `
         📚 Mangás
     </button>
 
+    <button class="botao-menu">
+        🔔 Notificações
+    </button>
+
     <button class="botao-menu" onclick="window.location.href='perfil-usuario.html'">
         👤 Meu Perfil
     </button>
