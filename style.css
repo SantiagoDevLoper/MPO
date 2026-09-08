@@ -422,3 +422,45 @@ textarea {
 .botao-menu:hover {
     background-color: #3333333;
 }
+
+/* colecoes*/
+
+.colecoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+.colecao {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 15px;
+    padding: 20px;
+}
+.colecao h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#listaMeusAnimes,
+#listaMeusMangas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.area-imagem {
+    position: relative;
+}
+
+.nota-card {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+
+    padding: 4px 7px;
+    border-radius: 6px;
+
+    font-size: 13px;
+}

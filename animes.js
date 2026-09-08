@@ -299,7 +299,13 @@ function mostrarAnimes(lista){
 
                 return;
             }
-            minhaColeçao.push(anime);
+            minhaColeçao.push({
+                nome: anime.nome,
+                capa: anime.capa,
+                tipo: "anime"
+
+            });
+
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
             botao.textContent = "✓ Adicionado";
             botao.classList.add("adicionado");
