@@ -20,7 +20,7 @@ const animes = [
         capa: "imagens/anime/bleach.avif"
     },
     {
-        nome: "Bleach TYBW",
+        nome: "Bleach Thousand-Year Blood War",
         capa: "imagens/anime/tybw.avif"
     },
     {
@@ -109,7 +109,7 @@ const animes = [
         capa: "imagens/anime/ac.avif"
     },
     {
-        nome: "Nanatsu No taizai",
+        nome: "Nanatsu No Taizai",
         capa: "imagens/anime/nanatsu.avif"
     },
     {
@@ -237,40 +237,30 @@ const animes = [
 
 ];
 
-const coleçaoTeste = [
-    {
-        nome: "Death Note",
-        nota: 9
-    },
-    {
-        nome: "Monster",
-        nota: 10
-    }
-];
-coleçaoTeste.forEach(function(anime){
-    console.log("nome", anime.nome)
-    console.log("nota", anime.nota)
-})
 
 
 
 
-const anime = {
-    nome: "Death Note",
-    nota: 9,
-    status: "Assistindo"
+
+
+const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+const emailLogado = localStorage.getItem("usuarioLogado");
+
+const usuarioAtual = usuarios.find(function(usuario) {
+    return usuario.email === emailLogado;
+});
+
+if (!usuarioAtual) {
+    alert("Usuário não encontrado. Faça login novamente.");
+    window.location.href = "login.html";
 }
 
-
-let minhaColeçao = JSON.parse(localStorage.getItem("minhaColeçao")) || []
-console.log("coleçao carregada", minhaColeçao);
+const minhaColeçao = usuarioAtual.colecao;
 
 
 const listaAnimes = document.querySelector("#listaAnimes");
-const pesquisaAnime = document.querySelector("#pesquisaAnime")
-
-
-
+const pesquisaAnime = document.querySelector("#pesquisaAnime");
 
 function mostrarAnimes(lista){
     listaAnimes.innerHTML = "";
@@ -310,7 +300,7 @@ function mostrarAnimes(lista){
                 return;
             }
             minhaColeçao.push(anime);
-            localStorage.setItem("minhaColeçao", JSON.stringify(minhaColeçao));
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
             botao.textContent = "✓ Adicionado";
             botao.classList.add("adicionado");
             botao.disabled = true;

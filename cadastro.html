@@ -59,12 +59,27 @@
                     alert ("Preencha todos os campos");
                     return
                 }
+                const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-                localStorage.setItem("nomeCadastro", nome);
-                localStorage.setItem("emailCadastro", email);
-                localStorage.setItem("senhaCadastro", senha);
+                const usuarioExiste = usuarios.some(function(usuario) {
+                    return usuario.email === email;
+                })
+                if (usuarioExiste) {
+                    alert("Esse E-mail já está cadastrado")
+                    return;
+                }
+                const novoUsuario = {
+                    nome: nome,
+                    email: email,
+                    senha: senha,
+                    bio: "",
+                    colecao: []
 
-               window.location.href = "perfil.html"
+                };
+                usuarios.push(novoUsuario);
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                localStorage.setItem("usuarioLogado", email);
+                window.location.href = "perfil.html";
             })
         </script>
     </body>

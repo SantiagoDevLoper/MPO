@@ -58,12 +58,22 @@
                 formLogin.addEventListener("submit", function(event){
                     event.preventDefault();
 
-                    const email = document.querySelector("#email").Value;
+                    const email = document.querySelector("#email").value;
                     const senha = document.querySelector("#senha").value;
                     if (email === "" || senha === "") {
                         alert("Preencha o e-mail e a senha");
                         return;
                     }
+                    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+                    const usuario = usuarios.find(function(usuario) {
+                        return usuario.email === email && usuario.senha === senha;
+                    });
+                    if (!usuario) {
+                        alert("E-mail ou senha incorretos");
+                        return;
+                    }
+                    localStorage.setItem("usuariLogado", email);
+                    
 
                     window.location.href = "perfil.html";
 

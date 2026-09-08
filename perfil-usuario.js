@@ -1,9 +1,19 @@
-console.log("JavaScript funcionando");
-const nomeSalvo = localStorage.getItem("nomeUsuario");
+const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+const emailLogado = localStorage.getItem("usuarioLogado");
+
+const usuarioAtual = usuarios.find(function(usuario) {
+    return usuario.email === emailLogado;
+})
+
+
+
+
+
+
 const nomePerfil = document.querySelector("#nomePerfil");
 
 const bioPerfil = document.querySelector("#bioPerfil");
-const bioSalva = localStorage.getItem("bioUsuario");
+
 
 const botaoEditar = document.querySelector("#botaoEditar");
 const areaEdicao = document.querySelector("#areaEdicao");
@@ -13,7 +23,7 @@ const botaoSalvar = document.querySelector("#botaoSalvar");
 const novoNome = document.querySelector("#novoNome");
 const novaBio = document.querySelector("#novaBio");
 
-const minhaColeçao = JSON.parse(localStorage.getItem("minhaColeçao")) || [];
+const minhaColeçao = usuarioAtual.colecao;
 const listaMeusAnimes = document.querySelector("#listaMeusAnimes");
 
 function mostrarMeusAnimes() {
@@ -62,7 +72,7 @@ function mostrarMeusAnimes() {
         }
 
         anime.nota = i;
-        localStorage.setItem("minhaColeçao", JSON.stringify(minhaColeçao));
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
         console.log("nota escolhida", i);
     });
@@ -78,7 +88,7 @@ function mostrarMeusAnimes() {
         botaoRemover.classList.add("principal")
         botaoRemover.addEventListener("click", function(){
             minhaColeçao.splice(indice, 1)
-            localStorage.setItem("minhaColeçao", JSON.stringify(minhaColeçao));
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
             mostrarMeusAnimes();
         })
         
@@ -107,21 +117,25 @@ mostrarMeusAnimes()
 
 
 
-nomePerfil.textContent = nomeSalvo;
-bioPerfil.textContent = bioSalva;
+nomePerfil.textContent = usuarioAtual.nome;
+bioPerfil.textContent = usuarioAtual.bio;
 
 botaoEditar.addEventListener("click", function(){
     areaEdicao.style.display = "flex";
-    novoNome.value = nomeSalvo;
-    novaBio.value = bioSalva.trim();
+    novoNome.value = usuarioAtual.nome;
+    novaBio.value = usuarioAtual.bio.trim();
 });
 
 botaoSalvar.addEventListener("click", function(){
     const nomeNovo = novoNome.value;
     const bioNova = novaBio.value;
-    localStorage.setItem("nomeUsuario", nomeNovo);
-    localStorage.setItem("bioUsuario", bioNova);
+
+    usuarioAtual.nome = nomeNovo;
+    usuarioAtual.bio = bioNova;
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
     nomePerfil.textContent = nomeNovo;
     bioPerfil.textContent = bioNova;
+
     areaEdicao.style.display = "none"
 })
