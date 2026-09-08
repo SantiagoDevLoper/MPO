@@ -420,7 +420,7 @@ textarea {
     font-size: 16px;
 }
 .botao-menu:hover {
-    background-color: #3333333;
+    background-color: #333333;
 }
 
 /* colecoes*/
@@ -504,4 +504,18 @@ textarea {
 #nomeArquivo {
     color: #999999;
     font-size: 14px;
+}
+#botaoEditar {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#botaoEditar {
+    background-color: #222222;
+    color: white;
+    border: 1px solid #333333;
+}
+
+#botaoEditar:hover {
+    background-color: #333333;
+    color: white;
 }
