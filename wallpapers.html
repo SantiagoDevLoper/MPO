@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wallpapers - MPO</title>
+    <link rel="stylesheet" href="style.css?v=10">
+</head>
+
+<body>
+
+    <div class="fundo"></div>
+
+    <main class="conteudo">
+
+        <h1 id="titulo">Wallpapers</h1>
+
+        <p>Escolha uma categoria</p>
+
+        <div class="categorias-wallpaper">
+
+    <div class="categoria-lateral">
+
+        <button class="botao-wallpaper" data-tipo="celular">
+            📱
+            <span>Celular</span>
+        </button>
+
+        <input
+            type="text"
+            id="pesquisaWallpaper"
+            placeholder="🔎 Pesquisar wallpaper..."
+        >
+
+    </div>
+
+    <button class="botao-wallpaper" data-tipo="pc">
+        🖥️
+        <span>PC</span>
+    </button>
+
+</div>
+
+        <div id="listaWallpapers"></div>
+
+    </main>
+    <div id="visualizadorWallpaper">
+
+    <button id="fecharWallpaper">✕</button>
+
+        <img id="imagemGrande" alt="Wallpaper">
+
+        <a id="baixarWallpaper" download>
+        ⬇ Baixar Wallpaper
+        </a>
+
+    </div>
+
+
+    <script src="wallpapers.js"></script>
+    <script src="menu.js"></script>
+
+</body>
+
+</html>

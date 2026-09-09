@@ -59,6 +59,30 @@ const mangas = [
         nome: "Fullmetal Alchemist Brotherhood",
         capa: "imagens/manga/fullmetalbh.avif"
     },
+    {
+        nome: "Tokyo Ghoul",
+        capa: "imagens/manga/tokyoghoul.avif"
+    },
+    {
+        nome: "Dragon Ball",
+        capa: "imagens/manga/dragonball2.avif"
+    },
+    {
+        nome: "Yu-Gi-Oh",
+        capa: "imagens/manga/yugioh.avif"
+    },
+    {
+        nome: "JoJo's Bizarre Adventures",
+        capa: "imagens/manga/jojo.avif"
+    },
+    {
+        nome: "Sailor Moon",
+        capa: "imagens/manga/sailor.avif"
+    },
+    {
+        nome: "Neon Genesis Evangelion",
+        capa: "imagens/manga/evangelion.avif"
+    }
 ];
 
 

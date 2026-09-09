@@ -16,6 +16,9 @@ menu.innerHTML = `
     <button class="botao-menu" onclick="window.location.href='mangas.html'">
         📚 Mangás
     </button>
+    <button class="botao-menu" onclick="window.location.href='wallpapers.html'">
+        🖼️ Wallpapers
+    </button>
 
     <button class="botao-menu">
         🔔 Notificações
