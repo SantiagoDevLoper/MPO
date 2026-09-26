@@ -78,7 +78,10 @@ function mostrarWallpapers(lista) {
             imagemGrande.src = wallpaper.imagem;
 
             baixarWallpaper.href = wallpaper.imagem;
-            baixarWallpaper.download = wallpaper.nome;
+            
+            const extensao = wallpaper.imagem.split(".").pop();
+
+            baixarWallpaper.download = wallpaper.nome + "." + extensao;
 
             visualizadorWallpaper.style.display = "flex";
 
